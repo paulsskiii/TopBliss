@@ -62,10 +62,18 @@ try:
 )
     
     
-    print("Waiting for submit button...")
+    print("clinking messages")
     click_messages = wait.until(EC.element_to_be_clickable((By.XPATH, paths.messages)))
     click_messages.click()
 
+    
+    print("clinking phone no number")
+    click_No_phone_number = wait.until(EC.element_to_be_clickable((By.XPATH, paths.No_phone_number)))
+    click_No_phone_number.click()
+
+    print("clinking calendar")
+    click_calendar = wait.until(EC.element_to_be_clickable((By.XPATH, paths.calendar)))
+    click_calendar.click()
 
     time.sleep(100000)
 
