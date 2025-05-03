@@ -63,8 +63,11 @@ try:
     
     
     print("Waiting for submit button...")
-    # submit_button = wait.until(EC.element_to_be_clickable((By.XPATH, paths.submit_button_xpath)))
-    # submit_button.click()
+    click_messages = wait.until(EC.element_to_be_clickable((By.XPATH, paths.messages)))
+    click_messages.click()
+
+
+    time.sleep(100000)
 
 except Exception as e:
     # Print any error that occurs

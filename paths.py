@@ -9,5 +9,7 @@ reconnect_button = '//*[@id="platformDialogForm"]/div/div[1]/div/div/div/div[2]/
 EasebrewCare = '//*[@id="__next"]/div/div[1]/div[2]/div/div[2]/div[3]/div/div/div[1]/div[1]/div/div/div[8]/a/div/div[1]'
 EasaBrew_Herbal_Coffee = '//*[@id="__next"]/div/div[1]/div[2]/div/div[2]/div[3]/div/div/div[1]/div[1]/div/div/div[4]/a/div/div[1]'
 
-condition = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/li[1]/svg'
-mess
+condition = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/li[1]'
+messages = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/li[4]'
+No_phone_number = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/li[7]'
+calendar = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/div[1]/li'
