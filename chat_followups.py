@@ -1,0 +1,1 @@
+# plane b: manual scroll then there is a checker when it sees the message feild then it will get the relative xpath and get the id of it to be the stopper and the automation will continue
