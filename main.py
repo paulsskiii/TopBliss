@@ -9,7 +9,7 @@ def run_test_scripts(script_names):
             print(f"Error occurred while running {script}:\n{e.stderr}")
 
 if __name__ == "__main__":
-    phase1 = ['login.py'] 
+    phase1 = ['automation_followups.py'] 
     # test_scripts = ['login_test.py', 'another_test_script.py'] 
     run_test_scripts(phase1)
     input("Press Enter to exit...")

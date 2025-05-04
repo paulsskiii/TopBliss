@@ -13,3 +13,6 @@ condition = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/li[1]'
 messages = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/li[4]'
 No_phone_number = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/li[7]'
 calendar = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/div[1]/li'
+scrollbar = '//*[@id="conversationList"]/div[1]'
+ok_btn1 = '/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/button[2]'
+

@@ -9,6 +9,9 @@ import time
 # Import variables from external files
 import paths
 import credentials
+# Import the selection module
+from selection import perform_selection
+from login import perform_login
 
 # --- Driver Setup ---
 # Specify the path to your chromedriver executable
@@ -20,24 +23,14 @@ driver.maximize_window()
 
 # --- Selenium Actions ---
 try:
+    
+    driver.get(credentials.Pancake)
     wait = WebDriverWait(driver, 10)
 
-   
-    print("clinking messages")
-    click_messages = wait.until(EC.element_to_be_clickable((By.XPATH, paths.messages)))
-    click_messages.click()
+    perform_login(driver, wait)
 
     
-    print("clinking phone no number")
-    click_No_phone_number = wait.until(EC.element_to_be_clickable((By.XPATH, paths.No_phone_number)))
-    click_No_phone_number.click()
-
-    print("clinking calendar")
-    click_calendar = wait.until(EC.element_to_be_clickable((By.XPATH, paths.calendar)))
-    click_calendar.click()
-
-
-    time.sleep(100000)
+    perform_selection(driver, wait)
 
 except Exception as e:
     # Print any error that occurs
@@ -47,4 +40,3 @@ finally:
     # 7. Close the browser window
     # driver.quit() # Uncomment to close browser automatically
     print("Script finished.")
-
