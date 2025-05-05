@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import WebDriverException
 import time
 
 # Import variables from external files
@@ -31,11 +32,17 @@ try:
     # login scripts
     perform_login(driver, wait)
 
-    # side bar selection
-    perform_selection(driver, wait)
+    while True:
+        try:
+            # side bar selection
+            perform_selection(driver, wait)
 
-    # chat automation
-    perform_chat_followups(driver, wait)
+            # chat automation
+            perform_chat_followups(driver, wait)
+
+        except WebDriverException:
+            print("Browser closed. Stopping loop.")
+            break  # Exit loop when browser is closed
 
 except Exception as e:
     # Print any error that occurs
