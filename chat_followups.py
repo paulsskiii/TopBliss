@@ -8,7 +8,10 @@ import paths
 import credentials
 import promotions
 
+
+
 def perform_chat_followups(driver, wait):
+        
 
         print("scrolling down")
         scrollable_element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "rc-virtual-list-holder")))
@@ -38,44 +41,56 @@ def perform_chat_followups(driver, wait):
         print("Selecting the last div with an id attribute...")
         holder_inner = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "rc-virtual-list-holder-inner")))
 
-        try:
-            # use xpath to find last div with an id attribute
-            last_div = holder_inner.find_element(By.XPATH, './div[@id][last()]')
-            print(f"Last div found with ID: {last_div.get_attribute('id')}")
-            
-            # click last div
-            last_div.click()
-            print("Clicked the last div.")
-        except Exception as e:
-            print(f"An error occurred while selecting the last div: {e}")
+
+#  -------------------------------------
+        chat_stopper = None
+
+        while True:
+            try:
+                # Find the last div with an id attribute
+                last_div = holder_inner.find_element(By.XPATH, './div[@id][last()]')
+                last_div_id = last_div.get_attribute('id')
+                print(f"Last div found with ID: {last_div_id}")
+
+                # Break the loop if we've reached the stopper
+                if last_div_id == chat_stopper:
+                    print("Reached the stopper. Ending loop.")
+                    break
+
+                # Update the stopper value on the first iteration
+                if chat_stopper is None:
+                    chat_stopper = last_div_id
+                    print(f"Initial stopper set to: {chat_stopper}")
+
+                # Click the last div
+                last_div.click()
+                print("Clicked the last div.")
+
+                # Chatting part
+                print("Waiting for reply box...")
+                input_box = wait.until(EC.element_to_be_clickable((By.XPATH, paths.reply_box)))
+                input_box.click()
+                input_box.send_keys(promotions.reply_promotion1)
+                print(f"Typed message: {promotions.reply_promotion1}")
+
+                # Simulate pressing Enter key twice
+                input_box.send_keys(Keys.ENTER)
+                print("Pressed Enter.")
+                time.sleep(1)
+                print("Enter again to send")
+                input_box.send_keys(Keys.ENTER)
+
+                # Optional delay before moving to the next div
+                time.sleep(2)
+
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                break
 
 
-        # chatting part
-        print("Waiting for reply box...")
-        input_box = wait.until(EC.element_to_be_clickable((By.XPATH, paths.reply_box)))
-        input_box.click()
-        input_box.send_keys(promotions.reply_promotion1)
-        print(f"Typed message: {promotions.reply_promotion1}")
+   
 
-        
-
-
-        # Simulate pressing Enter key
-        input_box.send_keys(Keys.ENTER)
-        print("Pressed Enter.")
-        #first enter to load the promotion message
-        time.sleep(1)
-        print("Enter again to send")
-        input_box.send_keys(Keys.ENTER)
-
-
-        time.sleep(1000000000)
-        # print("Waiting for send button...")
-        # send_button = wait.until(EC.element_to_be_clickable((By.XPATH, paths.send_btn)))
-        # send_button.click()
-        # print("Clicked Send button.")
-
-        time.sleep(1000000000)
+        # time.sleep(1000000000)
 
         try:
             
