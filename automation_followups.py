@@ -12,6 +12,7 @@ import credentials
 # Import the selection module
 from selection import perform_selection
 from login import perform_login
+from chat_followups import perform_chat_followups
 
 # --- Driver Setup ---
 # Specify the path to your chromedriver executable
@@ -27,10 +28,14 @@ try:
     driver.get(credentials.Pancake)
     wait = WebDriverWait(driver, 10)
 
+    # login scripts
     perform_login(driver, wait)
 
-    
+    # side bar selection
     perform_selection(driver, wait)
+
+    # chat automation
+    perform_chat_followups(driver, wait)
 
 except Exception as e:
     # Print any error that occurs
