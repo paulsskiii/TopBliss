@@ -39,7 +39,7 @@ def perform_selection(driver, wait):
 
         # Wait for OK button to disappear
         print("Waiting for OK button to disappear...")
-        WebDriverWait(driver, 120).until(
+        WebDriverWait(driver, 10000000).until(
             EC.invisibility_of_element((By.XPATH, paths.ok_btn1))
         )
         print("OK button has disappeared. Proceeding...")

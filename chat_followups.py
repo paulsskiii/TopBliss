@@ -88,7 +88,7 @@ def perform_chat_followups(driver, wait):
                 break
 
 
-   
+        # add time stop
 
         # time.sleep(1000000000)
 
