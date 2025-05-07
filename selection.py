@@ -14,7 +14,7 @@ def perform_selection(driver, wait):
         driver.refresh()
 
         print("Manual Login Required")
-        WebDriverWait(driver, 10000).until(
+        WebDriverWait(driver, 1000000).until(
             EC.presence_of_element_located((By.XPATH, paths.condition))
         )
         
