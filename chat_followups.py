@@ -75,13 +75,13 @@ def perform_chat_followups(driver, wait):
 
                 # Simulate pressing Enter key twice
                 input_box.send_keys(Keys.ENTER)
-                print("Pressed Enter.")
+                print("Pressed Enter to load the promotion details")
                 time.sleep(1)
                 print("Enter again to send")
                 input_box.send_keys(Keys.ENTER)
 
                 # Optional delay before moving to the next div
-                time.sleep(2)
+                time.sleep(3)
 
             except Exception as e:
                 print(f"An error occurred: {e}")

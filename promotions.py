@@ -1,1 +1,1 @@
-reply_promotion1 = "/rt1-399"
+reply_promotion1 = "/FF"

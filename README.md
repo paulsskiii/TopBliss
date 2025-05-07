@@ -42,9 +42,45 @@ This project uses ChromeDriver to control your Chrome browser.
 
 > ✅ Be sure your **Chrome version and ChromeDriver version match exactly** to avoid errors.
 
+
+--
+
+### 4. 🥞 Pancake Extension Setup
+
+To use the Pancake extension with the automation:
+
+1. **Ensure the Pancake extension is installed on your Chrome browser.**  
+   - If not installed, download it from the Chrome Web Store:  
+     👉 [Pancake V2 Extension](https://chromewebstore.google.com/detail/pancake-v2/oehooocookcnclgniepdgaiankfifmmn?hl=en)
+
+2. **Find the extension ID**:
+   - Go to `chrome://extensions/` in your Chrome browser.
+   - Click “Details” under the Pancake extension.
+   - Look for the **ID** (a long string of letters) and take note of it.
+
+3. **Locate the extension directory on your computer**:
+   - Open File Explorer and go to:  
+     ```
+     C:\Users\<YourUsername>\AppData\Local\Google\Chrome\User Data\Default\Extensions\
+     ```
+   - Replace `<YourUsername>` with your actual Windows username.
+   - Inside this folder, look for the folder name that matches the extension ID you noted earlier.
+   - Navigate into that folder and into the version folder inside it.
+   - Copy the full path (e.g.,  
+     `C:\<user>\<user>\AppData\Local\Google\Chrome\User Data\Default\Extensions\<ID>\2.1.0_0`)
+
+4. **Set the path in the project**:
+   - Open the `paths.py` file in the project directory.
+   - Replace the value of the `ext_path` variable with the full path you copied:
+     ```python
+     ext_path = "C:\Users\Paulsskiii\AppData\Local\Google\Chrome\User Data\Default\Extensions\oehooocookcnclgniepdgaiankfifmmn\2.1.0_0"
+     ```
+   - Make sure the string is prefixed with `r` to avoid issues with backslashes.
+
+
 ---
 
-### 4. ▶️ Run the Automation
+### 5. ▶️ Run the Automation
 
 Once everything is set up, simply run:
 

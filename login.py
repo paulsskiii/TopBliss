@@ -21,10 +21,10 @@ def perform_login(driver, wait):
     login_button.click()
     print("Clicked header login button.")
 
-    print("Manual Login Required")
-    WebDriverWait(driver, 10000).until(
-        EC.presence_of_element_located((By.XPATH, paths.condition))
-    )
+    # print("Manual Login Required")
+    # WebDriverWait(driver, 10000).until(
+    #     EC.presence_of_element_located((By.XPATH, paths.condition))
+    # )
     
     try:
         

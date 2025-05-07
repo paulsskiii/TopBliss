@@ -9,12 +9,17 @@ import credentials
 def perform_selection(driver, wait):
     
     try:
-
-        wait = WebDriverWait(driver, 5)
+        # 10sec  
+        # wait = WebDriverWait(driver, 10) 
         driver.refresh()
 
-        wait = WebDriverWait(driver, 5)
+        print("Manual Login Required")
+        WebDriverWait(driver, 10000).until(
+            EC.presence_of_element_located((By.XPATH, paths.condition))
+        )
         
+        wait = WebDriverWait(driver, 10) 
+
         print("clinking messages")
         click_messages = wait.until(EC.element_to_be_clickable((By.XPATH, paths.messages)))
         click_messages.click()
