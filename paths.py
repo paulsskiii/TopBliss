@@ -17,6 +17,10 @@ scrollbar = '//*[@id="conversationList"]/div[1]'
 ok_btn1 = '/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/button[2]'
 reply_box = '//*[@id="replyBoxComposer"]'
 send_btn = '//*[@id="reply_box"]/div[1]/div[2]/div/div[2]/div/span[1]'
+SecondToTheLastchat =''
+firstToTheLastchat =''
+Lastchat = './div[@id][last()]'
+
 
 # to include the extension path this will change
 ext_path = 'C:\\Users\\Paulsskiii\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\oehooocookcnclgniepdgaiankfifmmn\\0.5.28_0'

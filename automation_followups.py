@@ -1,61 +1,51 @@
-# Import necessary libraries from Selenium
-from selenium import webdriver
+# Import necessary libraries
+import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import WebDriverException
 import time
 
-# Import variables from external files
+# Import external variables and modules
 import paths
 import credentials
-# Import the selection module
 from selection import perform_selection
 from login import perform_login
 from chat_followups import perform_chat_followups
-ext_path = paths.ext_path
 
-chrome_options = Options()
-chrome_options.add_argument(f'--load-extension={paths.ext_path}')
-                
-# --- Driver Setup ---
-# Specify the path to your chromedriver executable
-service = Service(executable_path="chromedriver.exe")
-# Initialize the Chrome WebDriver
-driver = webdriver.Chrome(service=service,options=chrome_options)
-# Maximize window
+ext_path = paths.ext_path  # Ensure this is an absolute path to an **unpacked** extension
+
+# --- Setup Chrome Options ---
+chrome_options = uc.ChromeOptions()
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument('--disable-blink-features=AutomationControlled')
+chrome_options.add_argument(f'--load-extension={ext_path}')  # 👈 Unpacked extension folder
+
+# --- Initialize Undetected Chrome Driver ---
+driver = uc.Chrome(options=chrome_options, headless=False)  # headless=True disables extension GUI
 driver.maximize_window()
 actions = ActionChains(driver)
 
 # --- Selenium Actions ---
 try:
-    
     driver.get(credentials.Pancake)
     wait = WebDriverWait(driver, 100000)
 
-    # login scripts
+    # login
     perform_login(driver, wait)
 
     while True:
         try:
-            # side bar selection
             perform_selection(driver, wait)
-
-            # chat automation
             perform_chat_followups(driver, wait)
-
         except WebDriverException:
             print("Browser closed. Stopping loop.")
-            break  # Exit loop when browser is closed
+            break
 
 except Exception as e:
-    # Print any error that occurs
     print(f"An error occurred during the login process: {e}")
 
 finally:
-    # 7. Close the browser window
-    # driver.quit() # Uncomment to close browser automatically
     print("Script finished.")
+    # driver.quit()  # Uncomment if you want to close the browser
