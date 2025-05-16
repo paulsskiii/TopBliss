@@ -77,12 +77,18 @@ To use the Pancake extension with the automation:
      ```
    - Make sure the string is prefixed with `r` to avoid issues with backslashes.
 
-4. **install undetected-chromedriver**:
-   -pip install undetected-chromedriver.
+
    
 ---
 
-### 5. ▶️ Run the Automation
+### 6. install undetected-chromedriver
+
+   -pip install undetected-chromedriver. in the terminal
+   
+
+---
+
+### 7. ▶️ Run the Automation
 
 Once everything is set up, simply run:
 
