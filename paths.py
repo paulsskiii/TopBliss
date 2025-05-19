@@ -23,4 +23,8 @@ Lastchat = './div[@id][last()]'
 
 
 # to include the extension path this will change
-ext_path = 'C:\\Users\\Paulsskiii\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\oehooocookcnclgniepdgaiankfifmmn\\0.5.28_0'
+ext_path = 'C:\\Users\\Lenovo PC\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1\\Extensions\\oehooocookcnclgniepdgaiankfifmmn\\0.5.29_0'
+# ext_path = 'C:\\Users\\Paulsskiii\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\oehooocookcnclgniepdgaiankfifmmn\\0.5.28_0'
+
+name_xpath = '//*[@id="pageCustomer"]/div/span'
+page_xpath = '//*[@id="__next"]/div/div[2]/nav/div/div[2]/ul[2]/li[2]/a/div[1]/span/div'
