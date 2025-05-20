@@ -171,6 +171,9 @@ Topbliss_sel/
 ---
 
 ## 📌 Notes
+------LOGGING UPDATE-----------
+- json file with secret Download URL: https://drive.google.com/uc?export=download&id=13a_jEk7zkeUIJAe2zP0HN3zSSh9mIHXj
+(add the file to the project folder)
 
 - Requires **manual login** and **calendar input**.
 - Ensure `chromedriver.exe` matches your Chrome browser version.
