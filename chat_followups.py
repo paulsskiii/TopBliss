@@ -88,8 +88,7 @@ def perform_chat_followups(driver, wait):
             page_name = page_element.text.strip()
 
             now = datetime.now()
-            current_time = now.strftime("%H:%M:%S")
-            current_date = now.strftime("%Y-%m-%d")
+            current_datetime = now.strftime("%Y-%m-%d %H:%M:%S")
 
             # Get all IDs currently in column 1 (assuming ID is in first column)
             id_col = sheet.col_values(1)
@@ -102,7 +101,7 @@ def perform_chat_followups(driver, wait):
             else:
                 next_id = 1  # First entry if none exists yet
 
-            row = [str(next_id), page_name, base_text, customer_name, current_date, current_time]
+            row = [str(next_id), page_name, base_text, customer_name, current_datetime]
             sheet.insert_row(row, 2)
             print(f"Logged to Google Sheets: {row}")
 
