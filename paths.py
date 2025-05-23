@@ -20,7 +20,11 @@ send_btn = '//*[@id="reply_box"]/div[1]/div[2]/div/div[2]/div/span[1]'
 SecondToTheLastchat =''
 firstToTheLastchat =''
 Lastchat = './div[@id][last()]'
+chat_send_button = '//*[@id="reply_box"]/div[1]/div[2]/div/div[2]/div/span[1]'
 
 
 # to include the extension path this will change
-ext_path = 'C:\\Users\\Paulsskiii\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\oehooocookcnclgniepdgaiankfifmmn\\0.5.28_0'
+ext_path = 'C:\\Users\\Paulsskiii\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\oehooocookcnclgniepdgaiankfifmmn\\0.5.29_0'  
+
+name_xpath = '//*[@id="pageCustomer"]/div/span'
+page_xpath = '//*[@id="__next"]/div/div[2]/nav/div/div[2]/ul[2]/li[2]/a/div[1]/span/div'

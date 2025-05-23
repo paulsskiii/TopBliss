@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "pancake-data-marketing",
+  "private_key_id": "68273b87d10d6d6adc61d313e7590f705eca4837",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCnp4zUDpeA6ZPh\nZoqz+0oy+qbss7OgA8NDAkQrIm7htwqBtIDF6fNp6wc5ArD3/IedJwPwdioOrAVO\n/3X+q/IbChaM7JLDnM7DSRRk2HHOgCKTdAN9nKjAndWRff5wzpbFGRlO0rfAs0KN\n41ocD9ESKJRbGE9wP7h/8phAsHJPCgY1nVaDrj5QTIbYOGoPiFjreHI2wabifJ/R\n9PdC91qqLk98/xx1wyb0jzoBMgTNrIKuuyoo8YNksc8n+oyWpl1rD05EZa5nDmiZ\nIhABJUfi2Qzqu0dMbjpOWxsN565q7Yc6bW+nWoVkJPiO/9Roqc3XQEECpsKAldoi\nZupv6MI1AgMBAAECggEAC5FZSEwF2RYeWksmEkGqJRCIkisOBeIfx9C96l0ywGE0\nTBT4kG9SS8JOZvkc3Wd8f419gJeh0qeJqdTUWLEws2JQgjW6ixB+COYGDoILf2X1\nvMdtWQfrpURFENTClX8AbFlAfUdQ+KG49SuBzQ9F68mGZWJGhn/nCr3IePVgiO9G\nPNSpoRUK5k1lpF/7sX3IyigLwmEyYGzEGiuVg8vP1zfQ7b9iZWK6+yMYq3E2fX3p\nhGh0VwPCpcIOJoM787jazACI+9w14BXiSJietwQ6je9TUgY06fXKuMeas9GUm625\n0nsfNnCzIuH6t4d7aEJuyA/QswrlxPGoNeu/PhtWKwKBgQDpb1obDoSz7b0IwmFN\nWUhBAymjbGWcTinplEd1UvSmxmUg5DI8n+PQYkOsoqqoM8O3uRoMUVEhiHtw4wxh\nuAcd5gkmNFdYLzinOvmGDoUfkpF5Hs7JjlAN0TNMO/LN4+pWUnWygwXY+dK0FxWn\nhO+wVYzDRz26SAJ58kmbr3Zq9wKBgQC33GA0HjeQkf8+qymLA2BDHj3LaMFB1qYe\nazZx4KCPs2mFDxIPIFQtwUv83fpOw78aKoZbvr6x+QXT1ChJ6zq/OwL23Dz0tRyB\nvzAUQgAxP85mISGMDPxR7FqgBD3T2Sr5JD3SJcpp5UX879sbxG8948omZxW4HcvL\nJKcVgFJlMwKBgF/zLzxT2WQD4mGJVGlwu2xNmn3b/mAjGMMz+bNV583tWoAMjEGz\nDvcGjP6W1kLRFC+eXACYJBr+eI7MJLi95d76QOR9OzG6JzVF3m6l5T43Bqicay8Z\n2fnz9XvuYD0U46ubtVks1eh7t4niuzniQItgfr19uPeqxanOV0cw9iG9AoGBALPa\nExFobZox9qjq7dxaFRQSxQfxFPq+aglffwauYOGw8wuBznyVd0K6zwYwbeYWfR2v\nc3bTg968ZgLsieyk+faOVzv7/HSzpYsV5oYqed2zOMeWqSZCnZ/VwGC/RWuyB+Nm\nnEKxTOuBp5DhYEgtQ1QbO2eNdyV/oBa7Z+YUfIUZAoGBAI018h6ev9ZIGLB7ge/2\nf057EOkClK1OEMN+HaY/RiEKt3CM+T6lQ4cpeCHacAx5tG7it5ygnbpI3miv4eng\n6pABhgWGikB6LqnUDsnVVZ58iGfJvWjhmPrhBpPPNTJYa9M57TzsOc1LWdTo16Ub\nR0Rwbvt36H1SxtEpE5a1xRnc\n-----END PRIVATE KEY-----\n",
+  "client_email": "pancakebot@pancake-data-marketing.iam.gserviceaccount.com",
+  "client_id": "108527308354100513326",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pancakebot%40pancake-data-marketing.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

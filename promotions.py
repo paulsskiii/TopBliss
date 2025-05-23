@@ -1,1 +1,1 @@
-reply_promotion1 = "/FFJ"
+reply_promotion1 = "/FFswerte"
