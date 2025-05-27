@@ -1,3 +1,6 @@
+import os
+import glob
+
 login_button_xpath = "//button[@class='index-button index-button-primary header-login-button']"
 email_field_xpath = "//*[@id='email']"
 password_field_xpath = "//*[@id='pass']"
@@ -24,7 +27,18 @@ chat_send_button = '//*[@id="reply_box"]/div[1]/div[2]/div/div[2]/div/span[1]'
 
 
 # to include the extension path this will change
-ext_path = 'C:\\Users\\Paulsskiii\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\oehooocookcnclgniepdgaiankfifmmn\\0.5.29_0'  
+
+base_ext_path = r'C:\Users\Paulsskiii\AppData\Local\Google\Chrome\User Data\Default\Extensions\oehooocookcnclgniepdgaiankfifmmn'
+version_folders = glob.glob(os.path.join(base_ext_path, '*'))
+
+if not version_folders:
+    raise FileNotFoundError(f"No version folders found inside {base_ext_path}. Please check the path and extension ID.")
+
+latest_version_folder = max(version_folders, key=os.path.getmtime)
+
+ext_path = latest_version_folder.replace('/', '\\')
+print(f"ext_path = '{ext_path}'")
+  
 
 name_xpath = '//*[@id="pageCustomer"]/div/span'
 page_xpath = '//*[@id="__next"]/div/div[2]/nav/div/div[2]/ul[2]/li[2]/a/div[1]/span/div'
