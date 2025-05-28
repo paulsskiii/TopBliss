@@ -172,6 +172,10 @@ Topbliss_sel/
 
 ## 📌 Notes
 
+------LOGGING UPDATE-----------
+- json file with secret Download URL: https://drive.google.com/file/d/1gMxFcv0tF24pG4rZq0BIMGbI_wv8kd99/view?usp=drive_link
+(add the file to the project folder)
+
 - Requires **manual login** and **calendar input**.
 - Ensure `chromedriver.exe` matches your Chrome browser version.
 - The script will **continuously loop** until the browser is closed manually.
