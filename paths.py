@@ -25,20 +25,41 @@ firstToTheLastchat =''
 Lastchat = './div[@id][last()]'
 chat_send_button = '//*[@id="reply_box"]/div[1]/div[2]/div/div[2]/div/span[1]'
 
+try:
+    # Get the current user's home directory dynamically
+    user_profile = os.getenv('USERPROFILE')
+    if not user_profile:
+        raise EnvironmentError("USERPROFILE environment variable not found.")
 
-# to include the extension path this will change
+    # Fixed extension ID (change this to your actual extension ID)
+    extension_id = 'oehooocookcnclgniepdgaiankfifmmn'
 
-base_ext_path = r'C:\Users\Paulsskiii\AppData\Local\Google\Chrome\User Data\Default\Extensions\oehooocookcnclgniepdgaiankfifmmn'
-version_folders = glob.glob(os.path.join(base_ext_path, '*'))
+    # Build the base extension path dynamically
+    base_ext_path = os.path.join(
+        user_profile,
+        r'AppData\Local\Google\Chrome\User Data\Default\Extensions',
+        extension_id
+    )
 
-if not version_folders:
-    raise FileNotFoundError(f"No version folders found inside {base_ext_path}. Please check the path and extension ID.")
+    # Get all version folders inside the base extension directory
+    version_folders = glob.glob(os.path.join(base_ext_path, '*'))
 
-latest_version_folder = max(version_folders, key=os.path.getmtime)
+    if not version_folders:
+        raise FileNotFoundError(
+            f"No version folders found inside {base_ext_path}. "
+            "Please check the path and extension ID."
+        )
 
-ext_path = latest_version_folder.replace('/', '\\')
-print(f"ext_path = '{ext_path}'")
-  
+    # Find the latest version folder by last modified time
+    latest_version_folder = max(version_folders, key=os.path.getmtime)
+
+    # Normalize path separators (just in case)
+    ext_path = latest_version_folder.replace('/', '\\')
+
+    print(f"ext_path = '{ext_path}'")
+
+except Exception as e:
+    print(f"Error: {e}")
 
 name_xpath = '//*[@id="pageCustomer"]/div/span'
 page_xpath = '//*[@id="__next"]/div/div[2]/nav/div/div[2]/ul[2]/li[2]/a/div[1]/span/div'
