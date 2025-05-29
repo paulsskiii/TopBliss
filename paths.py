@@ -9,6 +9,7 @@ reconnect_button = '//*[@id="platformDialogForm"]/div/div[1]/div/div/div/div[2]/
 EasebrewCare = '//*[@id="__next"]/div/div[1]/div[2]/div/div[2]/div[3]/div/div/div[1]/div[1]/div/div/div[8]/a/div/div[1]'
 EasaBrew_Herbal_Coffee = '//*[@id="__next"]/div/div[1]/div[2]/div/div[2]/div[3]/div/div/div[1]/div[1]/div/div/div[4]/a/div/div[1]'
 
+
 condition = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/li[1]'
 messages = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/li[4]'
 No_phone_number = '//*[@id="__next"]/div/div[1]/div[2]/div/div/div/div[1]/ul/li[7]'
@@ -23,7 +24,7 @@ Lastchat = './div[@id][last()]'
 
 
 # to include the extension path this will change
-ext_path = 'C:\\Users\\Lenovo PC\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1\\Extensions\\oehooocookcnclgniepdgaiankfifmmn\\0.5.29_0'
+ext_path = 'C:\\Users\\Lenovo PC\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1\\Extensions\\oehooocookcnclgniepdgaiankfifmmn\\0.5.31_0'
 # ext_path = 'C:\\Users\\Paulsskiii\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\oehooocookcnclgniepdgaiankfifmmn\\0.5.28_0'
 
 name_xpath = '//*[@id="pageCustomer"]/div/span'

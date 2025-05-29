@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 from promotions import reply_promotion1
+from paths import reply_box
 import gspread
 import time
 import paths
@@ -67,17 +68,15 @@ def perform_chat_followups(driver, wait):
         print(f"Typed random string: {random_string}")
         time.sleep(random_delay(0.5, 1.5))  # Delay after typing random string
 
-        log_to_google_sheets(base_text)
-
         # Step 3: Delete the random string typed
         input_box.send_keys(Keys.BACKSPACE * len(random_string))
         print(f"Deleted random string: {random_string}")
         time.sleep(random_delay(0.5, 1.5))  # Delay after deleting random string
 
-    def log_to_google_sheets(base_text):
+    def log_to_google_sheets(base_text, status, duration_seconds):
         try:
             scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-            creds = ServiceAccountCredentials.from_json_keyfile_name("pancake-data-marketing-68273b87d10d.json", scope)
+            creds = ServiceAccountCredentials.from_json_keyfile_name("pancake-data-marketing-b43adb3ca4e4.json", scope)
             client = gspread.authorize(creds)
             sheet = client.open("Pancake Bot logs").sheet1
 
@@ -90,37 +89,44 @@ def perform_chat_followups(driver, wait):
             now = datetime.now()
             current_datetime = now.strftime("%Y-%m-%d %H:%M:%S")
 
-            # Get all IDs currently in column 1 (assuming ID is in first column)
             id_col = sheet.col_values(1)
-            
-            # The first row is header, so skip it and get max ID
             if len(id_col) > 1:
-                # Convert existing IDs (strings) to ints, ignore non-numeric values
                 existing_ids = [int(i) for i in id_col[1:] if i.isdigit()]
                 next_id = max(existing_ids) + 1 if existing_ids else 1
             else:
-                next_id = 1  # First entry if none exists yet
+                next_id = 1
 
-            row = [str(next_id), page_name, base_text, customer_name, current_datetime]
+            row = [str(next_id), page_name, base_text, customer_name, current_datetime, status, f"{duration_seconds:.2f}s"]
             sheet.insert_row(row, 2)
             print(f"Logged to Google Sheets: {row}")
 
         except Exception as log_err:
             print(f"[Sheet Log Error] Failed to log to Google Sheets: {log_err}")
 
+
     def perform_action(input_box, message):
         """Perform the full sequence: random string, typing, deleting, and pressing Enter."""
-        # Simulate typing with randomization
+
+        start_time = time.time()  # ⏱ Start timing
+
         type_with_randomization(input_box, message)
 
-        # Simulate pressing Enter key twice with random delays
         input_box.send_keys(Keys.ENTER)
         print("Pressed Enter to load the promotion details")
-        time.sleep(random_delay(1, 3))  # Random delay before second Enter
-        
+        time.sleep(random_delay(1, 3))
+
         input_box.send_keys(Keys.ENTER)
         print("Pressed Enter again to send")
-        time.sleep(random_delay(1, 3))  # Delay before moving on to the next action
+        time.sleep(random_delay(3, 5))
+
+        reply_text_after = input_box.get_attribute("value").strip()
+        status = "blocked" if reply_text_after else "not blocked"
+
+        end_time = time.time()  # ⏱ End timing
+        duration_seconds = end_time - start_time
+
+        # Log with duration
+        log_to_google_sheets(message, status, duration_seconds)
 
     while True:
         try:
