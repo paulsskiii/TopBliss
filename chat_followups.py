@@ -78,7 +78,7 @@ def perform_chat_followups(driver, wait):
             scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
             creds = ServiceAccountCredentials.from_json_keyfile_name("pancake-data-marketing-b43adb3ca4e4.json", scope)
             client = gspread.authorize(creds)
-            sheet = client.open("Pancake Bot logs").sheet1
+            sheet = client.open("Pancake Bot logs").worksheet("Logs")
 
             name_element = driver.find_element(By.XPATH, '//*[@id="pageCustomer"]/div/span')
             customer_name = name_element.text.strip()

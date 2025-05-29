@@ -175,6 +175,9 @@ Topbliss_sel/
 ------LOGGING UPDATE-----------
 - json file with secret Download URL: https://drive.google.com/file/d/1gMxFcv0tF24pG4rZq0BIMGbI_wv8kd99/view?usp=drive_link
 (add the file to the project folder)
+- LOOKER STUDIO: https://lookerstudio.google.com/reporting/2fbe571f-ca21-4eed-96ce-6b519fa3aec0
+- LOGS SHEETS: https://docs.google.com/spreadsheets/d/1oyVsOpubMuJV3mMzhdwk8JCZy2QOLJgc0X3vMI5uiWA/edit?usp=sharing
+- PROMOTION SHEETS: https://docs.google.com/spreadsheets/d/13AJRsMccdrOgy6YUESvRfRL1ZGseHSAgfbpd7aZsU3o/edit?usp=sharing
 
 - Requires **manual login** and **calendar input**.
 - Ensure `chromedriver.exe` matches your Chrome browser version.
